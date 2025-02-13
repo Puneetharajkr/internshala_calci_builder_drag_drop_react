@@ -38,13 +38,13 @@ const Calculator = () => {
   }
 
   return (
-    <div className="calculator">
+    <div className='calculator'>
       <Controls />
       <Display expression={expression} handleClear={handleClear} />
       <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="calculator" direction="horizontal">
+        <Droppable droppableId='calculator' direction='horizontal'>
           {dropProvided => (
-            <div ref={dropProvided.innerRef} className="button-grid">
+            <div ref={dropProvided.innerRef} className='button-grid'>
               {components.map((component, index) => (
                 <Draggable
                   key={component.id}
@@ -54,18 +54,18 @@ const Calculator = () => {
                   {dragProvided => (
                     <div
                       ref={dragProvided.innerRef}
-                      className="button-container"
+                      className='button-container'
                       {...dragProvided.draggableProps}
                       {...dragProvided.dragHandleProps}
                     >
                       <button
-                        className="button"
+                        className='button'
                         onClick={() => handleButtonClick(component.value)}
                       >
                         {component.value}
                       </button>
                       <button
-                        className="delete-btn"
+                        className='delete-btn'
                         onClick={() => removeComponent(component.id)}
                       >
                         ❌
